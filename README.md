@@ -3,9 +3,10 @@
 * ImageMagick will be installed
  
 New environment variables:
+
 Variable                            | Phabricator config variable          | Description
 ------------------------------------|--------------------------------------|------------
-PHABRICATOR_ENABLE_GIF		        | files.enable-imagemagick             | If set, GIF animations are enabled
+PHABRICATOR_ENABLE_GIF		            | files.enable-imagemagick             | If set, GIF animations are enabled
 PHABRICATOR_ENABLE_YOUTUBE          | remarkup.enable-embedded-youtube     | If set, embedded youtube videos are enabled
 PHABRICATOR_ENABLE_PROTOTYPE_APPS   | phabricator.show-prototypes          | If set, prototype applications will be anebled
 PHABRICATOR_DISABLE_TEST_PLAN_FIELD | differential.require-test-plan-field | If set, the test-plan-field will be disabled
@@ -17,4 +18,3 @@ I will not be able to maintain this Docker image on a regular basis.
 Please use this image on your own risk. 
 
 Please refer to https://github.com/nasqueron/docker-phabricator for further informations regarding the original nasqueron/phabricator Docker image.
-
