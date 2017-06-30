@@ -48,35 +48,35 @@ if [ -z "$PHABRICATOR_NO_INSTALL" ]; then
 	bin/config set pygments.enabled true
 	
 	# Save files on disc instead of DB
-	if [ -z "$PHABRICATOR_SAVE_FILES_ON_DISC" ]; then
+	if [ -n "$PHABRICATOR_SAVE_FILES_ON_DISC" ]; then
 		bin/config set storage.local-disk.path "/var/files"
 	fi
 	
 fi
 
 # Enable GIF Support
-if [ -z "$PHABRICATOR_ENABLE_GIF" ]; then
+if [ -n "$PHABRICATOR_ENABLE_GIF" ]; then
 	bin/config set files.enable-imagemagick true
 else
 	bin/config set files.enable-imagemagick false	
 fi
 
 # Enable embedded Youtube Support
-if [ -z "$PHABRICATOR_ENABLE_YOUTUBE" ]; then
+if [ -n "$PHABRICATOR_ENABLE_YOUTUBE" ]; then
 	bin/config set remarkup.enable-embedded-youtube true
 else
 	bin/config set remarkup.enable-embedded-youtube false
 fi
 
 # Enable Phabricator Prototype Applications
-if [ -z "$PHABRICATOR_ENABLE_PROTOTYPE_APPS" ]; then
+if [ -n "$PHABRICATOR_ENABLE_PROTOTYPE_APPS" ]; then
 	bin/config set phabricator.show-prototypes true
 else
 	bin/config set phabricator.show-prototypes false
 fi
 
 # Disable the Test-Plan-Field
-if [ -z "$PHABRICATOR_DISABLE_TEST_PLAN_FIELD" ]; then
+if [ -n "$PHABRICATOR_DISABLE_TEST_PLAN_FIELD" ]; then
 	bin/config set differential.require-test-plan-field false
 else
 	bin/config set differential.require-test-plan-field true
