@@ -1,16 +1,16 @@
 #
-# Nasqueron  - Phabricator image
+# branched Nasqueron  - Phabricator image
 #
 
 FROM nasqueron/nginx-php-fpm
-MAINTAINER Sébastien Santoro aka Dereckson <dereckson+nasqueron-docker@espace-win.org>
+
 
 #
 # Prepare the container
 #
 
 RUN apt-get update && apt-get install -y \
-            mercurial subversion python-pygments openssh-client \
+            mercurial subversion python-pygments openssh-client imagemagick \
             mysql-client \
             --no-install-recommends && rm -r /var/lib/apt/lists/*
 	
@@ -27,7 +27,7 @@ COPY files /
 # Docker properties
 #
 
-VOLUME ["/opt/phabricator/conf/local", "/var/repo"]
+VOLUME ["/opt/phabricator/conf/local", "/var/repo", "/var/files"]
 
 WORKDIR /opt/phabricator
 CMD ["/usr/local/sbin/init-container"]
